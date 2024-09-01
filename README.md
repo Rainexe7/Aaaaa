@@ -94,37 +94,6 @@ a.Idled:connect(
         end
     end
 )
-local a = Instance.new("ScreenGui")
-local e = Instance.new("ImageButton")
-_G.Primary = Color3.fromRGB(43, 43, 43)
-_G.Dark = Color3.fromRGB(20, 16, 16)
-a.Parent = game.CoreGui
-a.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-e.Parent = a
-e.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-e.Size = UDim2.new(0, 50, 0, 50)
-e.BackgroundColor3 = _G.Primary
-e.ImageColor3 = Color3.fromRGB(255, 255, 255)
-e.ImageTransparency = .1
-e.Draggable = true
-e.Active = true
-e.Selectable = true
-e.BackgroundTransparency = .1
-e.Image = "rbxassetid://18981950275"
-e.Visible = true
-local a = Instance.new("UICorner")
-a.Name = "MCNR"
-a.Parent = e
-a.CornerRadius = UDim.new(0, 5)
-e.MouseButton1Down:connect(
-    function()
-        e:TweenSize(UDim2.new(0, 40, 0, 40), "Out", "Quad", 0.2, true)
-        wait(0.1)
-        e:TweenSize(UDim2.new(0, 50, 0, 50), "Out", "Quad", 0.2, true)
-        game:GetService("VirtualInputManager"):SendKeyEvent(true, 305, false, game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false, 305, false, game)
-    end
-)
 do
     if game:GetService("CoreGui"):FindFirstChild("ExplicitHubUI") then
         game:GetService("CoreGui").ExplicitHubUI:Destroy()
@@ -193,20 +162,6 @@ function a:Window(f, f, f)
     j.TextSize = 15.000
     j.TextColor3 = Color3.fromRGB(255, 255, 255)
     j.TextXAlignment = Enum.TextXAlignment.Left
-    local j = Instance.new("ImageButton")
-    j.Name = "Minimize"
-    j.Parent = i
-    j.BackgroundTransparency = 1
-    j.ImageColor3 = Color3.fromRGB(255, 255, 255)
-    j.Position = UDim2.new(0, 500, 0, 7)
-    j.Size = UDim2.new(0, 30, 0, 30)
-    j.Image = "rbxassetid://18981924795"
-    j.MouseButton1Click:Connect(
-        function()
-            game:GetService("VirtualInputManager"):SendKeyEvent(true, 305, false, game)
-            game:GetService("VirtualInputManager"):SendKeyEvent(false, 305, false, game)
-        end
-    )
     local e = Instance.new("Frame")
     e.Name = "Tab"
     e.Parent = i
